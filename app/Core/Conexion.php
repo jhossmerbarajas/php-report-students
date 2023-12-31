@@ -62,7 +62,7 @@ class Conexion
 		return $this;
 	}
 
-	 function first (){
+	function first (){
 		return $this->query->fetch(PDO::FETCH_ASSOC);
 	}
 
@@ -75,5 +75,28 @@ class Conexion
 	function all () {
 		$sql = "SELECT * FROM {$this->table}";
 		return $this->query($sql)->get();
+	}
+
+	function joinAllStudentWithCourse () {
+		$sql = "SELECT s.name, s.last_name, s.email, c.course_name
+			FROM {$this->table} AS s
+			JOIN {$this->tableRelation} AS c
+			ON c.id = s.course_id";
+
+		$this->query($sql);
+
+		return $this;
+	}
+
+	function joinStudentWithCourse ($id) {
+		$sql = "SELECT s.name, s.last_name, s.email, c.course_name
+			FROM {$this->table} AS s
+			JOIN {$this->tableRelation} AS c
+			ON c.id = s.course_id
+			WHERE s.id = ?";
+			// var_dump($sql . $id);
+		$this->query($sql, [$id]);
+
+		return $this;
 	}
 }

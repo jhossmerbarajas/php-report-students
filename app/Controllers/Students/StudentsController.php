@@ -2,12 +2,15 @@
 
 namespace App\Controllers\Students;
 
+use App\Controllers\Controller;
 use App\Models\Students;
 
-class StudentsController
+class StudentsController extends Controller
 {
 	function index () {
-		$studients = new Studients;
-		print_r($studients->all());
+		$student = new Students;
+		$students = $student->joinAllStudentWithCourse()->get();
+		
+		return $this->view("students.index", compact("students"));
 	}
 }
