@@ -1,7 +1,8 @@
-<?php  require_once "../resources/views/layouts/header.php"; ?>
+<?php require_once'../resources/views/layouts/header.php'; ?>
 	
-	<div class="mt-3 mb-5">
+	<div class="mt-3 mb-5 d-flex justify-content-between text-center">
 		<h2>List Students</h2>
+		<a href="/report-pdf" class="btn btn-danger">PDF</a>
 	</div>
 
 	<table class="table text-center">
