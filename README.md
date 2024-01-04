@@ -3,10 +3,10 @@
 <p>
 	A menudo, en nuestro proyectos, necesitaremos hacer reportes en nuestros proyectos. Reportes de:
 	<ul>
-		<ol>
+		<li>
 			Ventas
 			Usuarios 
-		</ol>
+		</li>
 	</ul>
 	solo por mencionar algunos
 </p>
@@ -32,7 +32,7 @@ composer require dompdf/dompdf
 ### Clonando Repositorio
 
 ```
-git clone
+git clone https://github.com/jhossmerbarajas/php-report-students.git
 ```
 
 ## A tener en cuenta
